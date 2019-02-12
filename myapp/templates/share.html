@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:crimson">
+        
+    {{ images }}
+    {% for image in images %}
+        <img src="/shared/{{ image }}">
+        <p>{{ image }}</p>
+    {% endfor %}
+
+</body>
+</html>

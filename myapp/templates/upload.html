@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:crimson">
+       <img  src="../media/{{ image }}"  >
+       <form action = {% url 'blackwhite' %} method='POST'>
+                     {% csrf_token %}
+              <button type = 'submit'> Black & White </button>
+       </form>
+       <br>
+
+       <form action = {% url 'rotate' %} method='POST'>
+                     {% csrf_token %}
+              <input type="text" name="degree" />       
+              <button type = 'submit'> Rotate</button>
+       </form>
+       <br>
+
+       <form action = {% url 'resize' %} method='POST'>
+                     {% csrf_token %}
+              <input type="text" name="length" />
+              <input type="text" name="width" />
+              <button type="submit"> Resize</button>       
+
+       </form>
+       <br>
+
+       <form action = {% url 'crop' %} method='POST'>
+                     {% csrf_token %}
+              <input type ="text" name="first" /><br>
+              <input type ="text" name="second" /><br>
+              <input type ="text" name="third" /><br>
+              <input type ="text" name="forth" /><br>
+              <button type="submit">Crop</button>    
+
+       </form>
+       <br>
+
+       <form action = {% url 'shared' %} method='POST'>
+                     {% csrf_token %}
+              <button type="submit">Save & Share</button>  
+       </form>  
+       <br>
+       
+       <form action = {% url 'show_shared_photos' %} method="POST">
+              {% csrf_token %}
+              <button type="submit">All Edited Photos</button>
+       </form>         
+              
+       
+</body>      
+</html>
